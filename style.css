@@ -1,11 +1,18 @@
 /* Add your CSS here */
 
-/* Set a vibrant background color for the whole page */
+/* Set a gradient background for the whole page */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #b3e6ff; /* brighter sky blue */
-  color: #1a2a2a; /* deeper gray for text */
+  background: linear-gradient(
+    135deg,
+    #0d1b2a 0%,    /* Deep navy */
+    #1b263b 40%,   /* Slightly lighter navy */
+    #274060 70%,   /* Blue-gray */
+    #415a77 100%   /* Soft blue */
+  );
+  color: #1a2a2a; /* Deep gray for text */
+  min-height: 100vh;
 }
 
 /* Hero section styles - now full width, no rounded corners */
@@ -13,7 +20,7 @@ body {
   background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
   color: white;
   text-align: center;
-  padding: 60px 20px 40px 20px;
+  padding: 100px 20px 80px 20px; /* Increased top and bottom padding */
   border-radius: 0;         /* No rounded corners */
   margin: 0;                /* No margin, stretches full width */
   width: 100vw;             /* Full viewport width */
@@ -29,11 +36,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0;
-  position: absolute;
+  position: fixed;      /* Changed from absolute to fixed */
   top: 0;
   left: 0;
   height: 48px;
-  z-index: 1;
+  z-index: 1000;        /* High z-index to stay above other content */
 }
 
 .navbar ul {
@@ -63,20 +70,21 @@ body {
 
 /* Add space below navbar in hero */
 .hero-content {
-  padding-top: 48px;
+  padding-top: 64px;    /* Increased to make room for fixed navbar */
 }
 
 /* Skills section styles */
 .skills {
-  background-color: #fffde7;
-  padding: 40px 32px;
-  max-width: 700px;
-  margin: 24px auto;
-  border-radius: 40px;
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
-  transition: box-shadow 0.3s, background 0.3s;
+  background-color: #fffde7;      /* Light yellow background */
+  padding: 64px 40px;             /* Spacious padding */
+  margin: 40px 0;                 /* Add vertical margin for spacing */
+  border-radius: 0;               /* No rounded corners */
+  width: 100vw;                   /* Full viewport width */
+  max-width: none;                /* Remove max-width limit */
   box-sizing: border-box;
-  text-align: center; /* Center all text in skills box */
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15); /* Subtle shadow */
+  transition: box-shadow 0.3s, background 0.3s;
 }
 
 /* Remove bullet points and display skills as plain text, spaced out in a row */
@@ -106,12 +114,11 @@ body {
 /* Bio section styles */
 .bio {
   background-color: #c8e6c9;         /* Soft green background */
-  padding: 48px 40px;                /* Balanced padding */
-  margin: 24px;
-  border-radius: 40px;               /* Extra rounded corners */
-  max-width: 800px;                  /* Wider box to prevent wrapping */
-  margin-left: auto;
-  margin-right: auto;
+  padding: 64px 40px;                /* More padding for a larger box */
+  margin: 0;                         /* No margin, stretches full width */
+  border-radius: 0;                  /* No rounded corners */
+  width: 100vw;                      /* Full viewport width */
+  max-width: none;                   /* Override max-width for full width */
   transition: box-shadow 0.3s, background 0.3s;
   box-sizing: border-box;
   word-break: break-word;
@@ -139,7 +146,6 @@ body {
   font-weight: 500;                  /* Slightly bold by default for less jump */
   letter-spacing: 0.02em;
   white-space: normal;               /* Allow natural wrapping */
-  /* Prevent awkward short lines by increasing box width and line length */
 }
 
 /* Prevent text shifting when bolded by reserving space for bold text */
@@ -180,19 +186,6 @@ body {
   transition: none;
 }
 
-/* Background video styles */
-.bg-video {
-  position: fixed;      /* Stay fixed in the viewport */
-  top: 0;
-  left: 0;
-  width: 100vw;         /* Full viewport width */
-  height: 100vh;        /* Full viewport height */
-  object-fit: cover;    /* Cover the whole background */
-  z-index: -1;          /* Put behind everything */
-  opacity: 0.7;         /* Slightly faded for readability */
-  pointer-events: none; /* Clicks pass through the video */
-}
-
 /* Add hover effect for the entire navbar */
 .navbar:hover,
 .navbar:focus-within {
@@ -209,3 +202,54 @@ body {
   letter-spacing: 0.5px;
   transition: all 0.3s;
 }
+
+/* Projects section styles */
+.projects {
+  background-color: #e3eafc;           /* Light blue to fit the theme */
+  padding: 64px 40px;                  /* Spacious padding */
+  margin: 0 0 80px 0;                 /* Only margin at the bottom for space */
+  border-radius: 0;                   /* No rounded corners */
+  width: 100vw;                       /* Full viewport width */
+  max-width: none;                    /* Override max-width for full width */
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15); /* Subtle shadow */
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* Hover effect for the projects section */
+.projects:hover {
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.18);
+  background: #f5faff; /* Slightly lighter on hover */
+}
+
+.projects:hover *:not(img) {
+  font-weight: 700;
+  color: #1a237e;
+  text-shadow: 0 1px 2px rgba(33, 150, 243, 0.08);
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+
+/* Add spacing between all main sections */
+.hero,
+.bio,
+.skills,
+.projects {
+  margin-bottom: 64px; /* Adds a large space below each section */
+}
+
+/* Make the space between each section as large as the height of the skills section */
+
+/* Add a spacer div after each section for large, consistent spacing */
+.section-spacer {
+  height: 64px; /* This matches the vertical padding of the skills section (64px top + 64px bottom) */
+}
+
+/* Example usage in HTML:
+  <section class="bio" id="bio">...</section>
+  <div class="section-spacer"></div>
+  <section class="skills" id="skills">...</section>
+  <div class="section-spacer"></div>
+  <section class="projects" id="projects">...</section>
+*/

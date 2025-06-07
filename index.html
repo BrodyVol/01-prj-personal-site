@@ -6,18 +6,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background video -->
-  <video autoplay playsinline muted loop preload="auto" class="bg-video">
-    <source src="rockymountain3.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
   <!-- Navigation Bar -->
   <nav class="navbar">
     <ul>
       <li><a href="#hero">Home</a></li>
       <li><a href="#bio">About</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
     </ul>
   </nav>
 
@@ -56,5 +51,36 @@
       <li><span class="hover-text">Creativity</span></li>
     </ul>
   </section>
+
+  <!-- My Projects Section -->
+  <section class="projects" id="projects">
+    <h2>
+      <span class="hover-text">My Projects</span>
+    </h2>
+    <p>
+      Here you will find some of the web development projects I create as I learn. Each project will show my progress and creativity!
+    </p>
+  </section>
 </body>
 </html>
+
+<style>
+/* Sleek multi-shade navy blue background using simple CSS gradients */
+/* Add this at the top of your CSS file for best effect */
+
+/* Set a gradient background for the whole page */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* Linear gradient with multiple navy blue shades */
+  background: linear-gradient(
+    135deg,
+    #0d1b2a 0%,    /* Deep navy */
+    #1b263b 40%,   /* Slightly lighter navy */
+    #274060 70%,   /* Blue-gray */
+    #415a77 100%   /* Soft blue */
+  );
+  color: #1a2a2a; /* Deep gray for text */
+  min-height: 100vh;
+}
+</style>
