@@ -15,9 +15,67 @@ body {
   min-height: 100vh;
 }
 
+/* Create a dense pattern of contrasting shapes ONLY on the background, not inside sections */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Let clicks go through */
+  z-index: 0;
+  /* Use lighter blue shapes for better contrast with the dark background */
+  background:
+    radial-gradient(circle at 10% 20%, #4fc3f7cc 0px, #4fc3f7cc 40px, transparent 70px),
+    radial-gradient(circle at 20% 80%, #90caf9cc 0px, #90caf9cc 30px, transparent 60px),
+    radial-gradient(circle at 80% 10%, #64b5f6cc 0px, #64b5f6cc 35px, transparent 65px),
+    radial-gradient(circle at 70% 60%, #1976d2cc 0px, #1976d2cc 30px, transparent 60px),
+    radial-gradient(circle at 30% 70%, #1565c0cc 0px, #1565c0cc 25px, transparent 55px),
+    radial-gradient(circle at 60% 30%, #5e92f3cc 0px, #5e92f3cc 30px, transparent 60px),
+    radial-gradient(circle at 50% 50%, #42a5f5cc 0px, #42a5f5cc 20px, transparent 50px),
+    radial-gradient(circle at 90% 80%, #29b6f6cc 0px, #29b6f6cc 35px, transparent 70px),
+    radial-gradient(circle at 80% 60%, #0288d1cc 0px, #0288d1cc 20px, transparent 50px),
+    radial-gradient(circle at 40% 90%, #039be5cc 0px, #039be5cc 30px, transparent 60px),
+    radial-gradient(circle at 60% 80%, #81d4facc 0px, #81d4facc 25px, transparent 55px),
+    radial-gradient(circle at 20% 30%, #00bcd4cc 0px, #00bcd4cc 20px, transparent 50px),
+    radial-gradient(circle at 75% 25%, #4fc3f7cc 0px, #4fc3f7cc 30px, transparent 60px),
+    radial-gradient(circle at 35% 60%, #1976d2cc 0px, #1976d2cc 25px, transparent 55px),
+    radial-gradient(circle at 55% 15%, #90caf9cc 0px, #90caf9cc 20px, transparent 50px);
+  opacity: 0.7; /* Higher opacity so shapes pop out more and look less grainy */
+}
+
+/* Make sure all sections have a solid background color so shapes do NOT show through */
+.hero,
+.bio,
+.skills,
+.projects {
+  position: relative;
+  z-index: 1;
+  background-clip: border-box;
+  background-color: inherit; /* fallback, will be overridden below */
+}
+
+/* Give each section a solid background color to hide the shapes behind */
+.hero {
+  background-color: #2196f3;
+  background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
+}
+
+.bio {
+  background-color: #c8e6c9;
+}
+
+.skills {
+  background-color: #fffde7;
+}
+
+.projects {
+  background-color: #e3eafc;
+}
+
 /* Hero section styles - now full width, no rounded corners */
 .hero {
-  background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
   color: white;
   text-align: center;
   padding: 100px 20px 80px 20px; /* Increased top and bottom padding */
