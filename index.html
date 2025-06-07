@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Beginner-friendly favicon (website icon) using a simple emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 120'><text y='0.9em' font-size='90'>🌄</text></svg>">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -46,7 +48,7 @@
       <span class="hover-text">About Me</span>
     </h2>
     <p>
-      Hi! I'm a web development student who loves the outdoors and the beautiful landscapes of Colorado.
+      Hi! I'm a student at American University in Washington, D.C., I am taking a summer course to study web development with AI and I hope to learn some coding fundamentals.
       I'm excited to share my journey and projects as I learn new skills.
     </p>
   </section>
@@ -54,14 +56,15 @@
   <!-- Skills Section: List your skills -->
   <section class="skills" id="skills">
     <h2>
-      <span class="hover-text">My Skills</span>
+      <span class="hover-text">My Skills (Currently Learning)</span>
     </h2>
     <ul>
-      <li><span class="hover-text">HTML</span></li>
-      <li><span class="hover-text">CSS</span></li>
-      <li><span class="hover-text">JavaScript (learning!)</span></li>
-      <li><span class="hover-text">Teamwork</span></li>
-      <li><span class="hover-text">Creativity</span></li>
+      <li><span class="hover-text">🌐 HTML</span></li>
+      <li><span class="hover-text">🎨 CSS</span></li>
+      <li><span class="hover-text">💻 JavaScript</span></li>
+      <li><span class="hover-text">🤖 Generative AI</span></li>
+      <li><span class="hover-text">🤝 Teamwork</span></li>
+      <li><span class="hover-text">✨ Creativity</span></li>
     </ul>
   </section>
 
@@ -74,6 +77,12 @@
       Here you will find some of the web development projects I create as I learn. Each project will show my progress and creativity!
     </p>
   </section>
+
+  <!-- Add this just before the closing </body> tag -->
+  <!-- Beginner-friendly footer bar showing the year the website was created -->
+  <footer class="footer-bar">
+    © 2025 
+  </footer>
 
   <!-- Place this script just before the closing </body> tag -->
   <script>
@@ -161,5 +170,19 @@ body.dark-mode .custom-toggle {
 
 body.dark-mode .custom-toggle:before {
   transform: translateX(20px);
+}
+
+/* Footer bar styles */
+/* Add this at the end of your style.css file */
+/* Beginner-friendly footer bar at the bottom of the page (not fixed, just at the bottom) */
+.footer-bar {
+  width: 100%;
+  background: #232946;       /* Dark background for contrast */
+  color: #ffe082;            /* Gold text for visibility */
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1em;
+  letter-spacing: 1px;
+  /* Removed position: fixed and z-index so it stays at the bottom of the content */
 }
 </style>
