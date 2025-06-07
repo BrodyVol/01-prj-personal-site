@@ -62,28 +62,39 @@ body::before {
   background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
 }
 
+/* Bio section styles */
 .bio {
   background-color: #c8e6c9;
 }
 
+/* Skills section styles */
 .skills {
   background-color: #fffde7;
 }
 
+/* Projects section styles */
 .projects {
   background-color: #e3eafc;
 }
 
-/* Hero section styles - now full width, no rounded corners */
+/* Hero section styles - now even taller for better mountain visibility */
 .hero {
   color: white;
   text-align: center;
-  padding: 100px 20px 80px 20px; /* Increased top and bottom padding */
-  border-radius: 0;         /* No rounded corners */
-  margin: 0;                /* No margin, stretches full width */
-  width: 100vw;             /* Full viewport width */
+  padding-top: 160px;   /* More space at the top for the mountain and nav */
+  padding-bottom: 100px;
+  border-radius: 0;               /* No rounded corners */
+  margin: 0;                      /* No margin, stretches full width */
+  width: 100vw;                   /* Full viewport width */
   box-sizing: border-box;
-  position: relative;       /* For navbar positioning */
+  position: relative;             /* For mountain positioning */
+  background-color: #2196f3;
+  background: 
+    linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%),
+    url('data:image/svg+xml;utf8,<svg width="1000" height="120" viewBox="0 0 1000 120" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="0,120 100,60 180,100 260,40 340,90 420,30 500,80 580,50 660,100 740,60 820,110 900,70 1000,120" stroke="white" stroke-width="4" fill="none" /></svg>') no-repeat bottom center;
+  background-size: cover, 1000px 120px;
+  background-repeat: no-repeat;
+  background-position: top, bottom center;
 }
 
 /* Navigation bar styles */
@@ -311,3 +322,21 @@ body::before {
   <div class="section-spacer"></div>
   <section class="projects" id="projects">...</section>
 */
+
+/* Add a simple mountain SVG as a visible outline above the hero section */
+.mountain-outline {
+  width: 100vw;         /* Make the SVG as wide as the viewport */
+  display: block;
+  margin: 0;
+  position: absolute;
+  top: 48px;            /* Move the mountain down by the navbar height (48px) */
+  left: 0;
+  z-index: 2;           /* Above background, below nav */
+  pointer-events: none; /* Let clicks go through */
+}
+
+/* Reduce extra space at the top of the hero section */
+.hero {
+  position: relative;
+  padding-top: 140px;   /* More space for the mountain and nav */
+}
