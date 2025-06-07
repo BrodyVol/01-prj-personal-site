@@ -8,15 +8,62 @@ body {
   color: #1a2a2a; /* deeper gray for text */
 }
 
-/* Hero section styles */
+/* Hero section styles - now full width, no rounded corners */
 .hero {
   background: linear-gradient(to bottom, #2196f3 0%, #0d47a1 100%);
   color: white;
   text-align: center;
   padding: 60px 20px 40px 20px;
-  border-radius: 40px; /* Extra rounded corners */
-  margin: 24px;
-  transition: box-shadow 0.3s, background 0.3s;
+  border-radius: 0;         /* No rounded corners */
+  margin: 0;                /* No margin, stretches full width */
+  width: 100vw;             /* Full viewport width */
+  box-sizing: border-box;
+  position: relative;       /* For navbar positioning */
+}
+
+/* Navigation bar styles */
+.navbar {
+  width: 100%;
+  background: rgba(13, 71, 161, 0.95); /* Slightly transparent dark blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 48px;
+  z-index: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 32px;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 12px 8px;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ffe082;
+}
+
+/* Add space below navbar in hero */
+.hero-content {
+  padding-top: 48px;
 }
 
 /* Skills section styles */
@@ -144,4 +191,21 @@ body {
   z-index: -1;          /* Put behind everything */
   opacity: 0.7;         /* Slightly faded for readability */
   pointer-events: none; /* Clicks pass through the video */
+}
+
+/* Add hover effect for the entire navbar */
+.navbar:hover,
+.navbar:focus-within {
+  background: #1a237e; /* Slightly deeper blue on hover */
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.18);
+}
+
+/* Make all navbar text bolder and sharper on navbar hover */
+.navbar:hover a,
+.navbar:focus-within a {
+  font-weight: 700;
+  color: #ffe082;
+  text-shadow: 0 1px 2px rgba(33, 150, 243, 0.08);
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
 }
