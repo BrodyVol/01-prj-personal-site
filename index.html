@@ -6,9 +6,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Background video -->
+  <video autoplay playsinline muted loop preload="auto" class="bg-video">
+    <source src="rocky-mountains.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <!-- Hero Section: Your name and a background image/color -->
   <section class="hero">
-    <h1>Welcome to My Portfolio</h1>
+    <!-- The span below will change text on hover using CSS -->
+    <h1>
+      <span class="hover-text">Welcome to My Portfolio</span>
+    </h1>
     <p>Exploring Web Development from the Heart of Colorado</p>
   </section>
 
@@ -16,7 +25,9 @@
   <section class="bio">
     <!-- Headshot image -->
     <img src="IMG_1582.jpg" alt="Headshot" class="headshot">
-    <h2>About Me</h2>
+    <h2>
+      <span class="hover-text">About Me</span>
+    </h2>
     <p>
       Hi! I'm a web development student who loves the outdoors and the beautiful landscapes of Colorado.
       I'm excited to share my journey and projects as I learn new skills.
@@ -25,13 +36,15 @@
 
   <!-- Skills Section: List your skills -->
   <section class="skills">
-    <h2>My Skills</h2>
+    <h2>
+      <span class="hover-text">My Skills</span>
+    </h2>
     <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript (learning!)</li>
-      <li>Teamwork</li>
-      <li>Creativity</li>
+      <li><span class="hover-text">HTML</span></li>
+      <li><span class="hover-text">CSS</span></li>
+      <li><span class="hover-text">JavaScript (learning!)</span></li>
+      <li><span class="hover-text">Teamwork</span></li>
+      <li><span class="hover-text">Creativity</span></li>
     </ul>
   </section>
 </body>
